@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rock Paper Scissors — เกมเป่ายิ้งฉุบ</title>
+  <!--Bootstrap 5-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card game-card shadow">
+      <div class="card-body text-center">
+        <h1 class="mb-1">🎮 เกมเป่ายิ้งฉุบ</h1>
+        <p class="text-muted mb-3">เลือกค้อน ✊ กระดาษ ✋ หรือ กรรไกร ✌️</p>
+
+        <!--คะแนนสกอร์บอร์ด-->
+        <div class="scoreboard d-flex justify-content-between align-items-center mb-3">
+          <div class="score player">
+            <div class="label">คุณ</div>
+            <div id="playerScore" class="value">0</div>
+          </div>
+          <div class="versus">VS</div>
+          <div class="score computer">
+            <div class="label">คอมพิวเตอร์</div>
+            <div id="computerScore" class="value">0</div>
+          </div>
+        </div>
+
+        <!--Choices-->
+        <div class="choices mb-3 d-flex justify-content-center gap-2">
+          <button class="btn choice-btn" data-choice="rock">✊ ค้อน</button>
+          <button class="btn choice-btn" data-choice="paper">✋ กระดาษ</button>
+          <button class="btn choice-btn" data-choice="scissors">✌️ กรรไกร</button>
+        </div>
+
+        <!--ผลตัดสิน-->
+        <div id="resultBox" class="result-box mb-3">
+          <div id="resultText" class="fw-bold">ยังไม่ได้เล่น</div>
+          <div id="roundInfo" class="text-muted small">เล่นถึง<span id="limitDisplay">5</span> คะแนน (First to 5)</div>
+        </div>
+
+        <!--เริ่มใหม่-->
+        <div class="d-flex justify-content-center gap-2">
+          <button id="resetBtn" class="btn btn-outline-secondary">รีเซ็ต</button>
+          <button id="changeModeBtn" class="btn btn-outline-primary">เปลี่ยนโหมด: First to 5</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+:root {
+  --bg1: #1abc9c;
+  --bg2: #16a085;
+  --card-bg: rgb(15, 186, 186);
+  --accent: #f1c40f;
+  --muted: #cbd5e1;
+  --text: #e6eef0;
+  --radius: 16px;
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: var(--text);
+}
+
+.game-card {
+  width: 360px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+p { margin-bottom: 1rem; color: var(--muted); }
+
+.scoreboard {
+  background: rgba(255,255,255,0.03);
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+.score { text-align: center; width: 40%; }
+.score .label { font-size: 0.9rem; color: var(--muted); }
+.score .value { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+
+.choices .choice-btn {
+  min-width: 100px;
+  padding: 10px;
+  background: linear-gradient(180deg,#ffffff06,#0000000a);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.choices .choice-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.result-box {
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.06);
+}
+#resultText { font-size: 1.05rem; }
+#roundInfo { margin-top: 6px; color: #bcd; }
+
+/*แฟลชสั้นๆเมื่อชนะ*/
+.flash-win {
+  animation: flash 450ms ease; /*รันแฟลชนาน 450 มิลลิวินาที แบบโค้งนิ่ม(ease)*/
+}
+@keyframes flash {
+  0% { transform: scale(1); background: rgba(241,196,15,0.08); }
+  50% { transform: scale(1.03); background: rgba(241,196,15,0.14); }
+  100% { transform: scale(1); background: transparent; }
+}
+
+/*Buttons*/
+#resetBtn, #changeModeBtn { border-radius: 10px; }
+
+/*Media Query (จอเล็ก)*/
+@media (max-width: 420px) {
+  .game-card { width: 92%; }
+  .choices .choice-btn { min-width: 90px; font-size: 0.95rem; }
+}
